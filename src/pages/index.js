@@ -1,309 +1,548 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import { Layout, CustomedNav } from "components/theme";
-import { Seo, HeroHeader } from "components/common";
-import {  About, Blog, Contact } from "components/landing";
+import { graphql, useStaticQuery } from "gatsby"
+import { Layout, CustomedNav } from "components/theme"
+import { Seo, HeroHeader, SeparateBox } from "components/common";
+import { Offer, About, ContactLocation } from "components/landing";
+
 
 const Home = () => {
-  const {
-    BlogData,
-    defaultBlogPostImg,
-    SeoData,
-    OfferData,
-    AboutData,
-    AboutFeatures,
-    LocationData,
-    ContactData,
-    ContactBrandInfo,
-    ContactItems,
-    LocationAddress,
-    LocationMap,
-    LocationContent,
-    mainArray,
-    sellIcon,
-    blogPosts,
-    icons,
-    productCardIcons,
-  } = useStaticQuery(
-    graphql`
-      query {
-        SeoData: wpVentuswebstartercore(slug: { eq: "seo-content" }) {
-          author
-          city
-          country
-          dir
-          email
-          facebook
-          instagram
-          logoUrl
-          legalName
-          lang
-          phone
-          region
-          siteDescription
-          siteBrand
-          thumbnail {
-            altText
-            localFile {
-              ...FileFragmentSvg
-              ...FileFragmentImg
-            }
-          }
-          siteTitle
-          twitter
-          title
-          github
-          defaultTitle
-          defaultDescription
-          foundingDate
-          zipCode
-          url
-        }
 
-        mainArray: allWpVentuswebstartermain(
-          filter: { slug: { glob: "*section-page" } }
-        ) {
-          edges {
-            node {
-              sectionTitle
-              order
-            }
-          }
-        }
+	const { SeoData, OfferData, AboutData, AboutFeatures, LocationData, ContactData, ContactBrandInfo, ContactItems, LocationAddress, LocationMap, LocationContent,  mainArray,  sellIcon, products, icons, productCardIcons } = useStaticQuery(
+		graphql`
+	query {
 
-
-
-        ContactItems: wpVentuswebstartermain(slug: { eq: "contact-section-page" }) {
-          phone {
-            multiBox {
-              content
-              type
-              title
-              img {
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData
-                  }
-                  childSvg {
-                    content {
-                      data
-                    }
-                  }
-                }
-              }
-            }
-          }
-
-          mail {
-            multiBox {
-              content
-              type
-              title
-              img {
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData
-                  }
-                  childSvg {
-                    content {
-                      data
-                    }
-                  }
-                }
-              }
-            }
-          }
-
-          whatsapp {
-            multiBox {
-              content
-              type
-              title
-              img {
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData
-                  }
-                  childSvg {
-                    content {
-                      data
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        blogPosts: allWpVentuswebstarterblog {
-          nodes {
-            slug
-            blogPostAuthor
-            blogPostExcerpt
-            blogPostImage {
+		SeoData: wpVentusautacore(slug: {eq: "seo-content"}) {
+            author
+            city
+            country
+            dir
+            email
+            facebook
+            instagram
+            logoUrl
+            legalName
+            lang
+            phone
+            region
+            siteDescription
+            siteBrand
+            thumbnail {
+              altText
               localFile {
-                childImageSharp {
-                  gatsbyImageData(quality: 60, webpOptions: { quality: 60 })
-                }
-                childSvg {
-                  content {
-                    data
-                  }
-                }
+                ...FileFragmentSvg
+                ...FileFragmentImg
               }
             }
-            blogPostImageAlt
-            blogPostImageGlow
-            blogPostImageGlow2
-            blogPostImageGlowDeg
-            blogPostImageGlowOpacity
-            blogPostImageHeight
-            blogPostCardHeight
-            blogPostTitle
-            blogPostTags {
-            checkboxValueOptions {
-              value
-            }
-            }
-            blogPostSubtitle
-            blogPostFarewell
-            blogPostContentText
-            blogPostContentBg
-            blogPostContent
-
-
+            siteTitle
+            twitter
+            title
+            github
+            defaultTitle
+            defaultDescription
+            foundingDate
+            zipCode
+            url
           }
-        }
 
-        ContactData: wpVentuswebstartermain(slug: { eq: "contact-section-page" }) {
-          ...CommonContent
-        }
 
-        AboutData: wpVentuswebstartermain(slug: { eq: "about-section-page" }) {
-          ...CommonContent
-          paragraphs {
-            fieldsList {
-              paragraph
-            }
-          }
-        }
-
-        AboutFeatures: wpVentuswebstartermain(slug: { eq: "about-section-page" }) {
-          features1 {
-            multiBox {
-              content
-              img {
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData
-                  }
-                  childSvg {
-                    content {
-                      data
-                    }
-                  }
-                }
+          mainArray: allWpVentusautamain(filter: {slug: {glob: "*section-page"}}) {
+            edges {
+              node {
+                sectionTitle
+                order
               }
-              title
-              type
             }
           }
 
-          features2 {
-            multiBox {
-              content
-              img {
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData
-                  }
-                  childSvg {
-                    content {
-                      data
-                    }
-                  }
-                }
-              }
-              title
-              type
+		  ContactBrandInfo: wpVentusautamain(slug: {eq: "contact-section-page"}) {
+
+				brandInfo1 {
+					multiBox {
+					content
+					title
+					type
+					}
+				}
+				brandInfo2 {
+					multiBox {
+					content
+					title
+					type
+					}
+				}
+			}
+
+
+		  ContactItems:  wpVentusautamain(slug: {eq: "contact-section-page"}) {
+
+			phone {
+				multiBox {
+				  content
+				  type
+				  title
+				  img {
+					localFile {
+					  childImageSharp {
+						gatsbyImageData
+					  }
+					  childSvg {
+						content {
+						  data
+						}
+					  }
+					}
+				  }
+				}
+			  }
+
+			mail {
+				multiBox {
+					content
+					type
+					title
+					img {
+					  localFile {
+						childImageSharp {
+						  gatsbyImageData
+						}
+						childSvg {
+						  content {
+							data
+						  }
+						}
+					  }
+					}
+				  }
+				}
+
+			whatsapp {
+				multiBox {
+					content
+					type
+					title
+					img {
+					  localFile {
+						childImageSharp {
+						  gatsbyImageData
+						}
+						childSvg {
+						  content {
+							data
+						  }
+						}
+					  }
+					}
+				  }
+				}
+
+		  	}
+	
+
+		  LocationContent: wpVentusautamain(slug: {eq: "location-section-page"}) {
+			paragraphs {
+				fieldsList {
+				  paragraph
+				}
+			  }
+		  }
+
+		   
+          LocationAddress: wpVentusautamain(slug: {eq: "location-section-page"}) {
+		  locationInfo1 {
+			multiBox {
+			  content
+			  title
+			  type
+			}
+		  }
+		  locationInfo2 {
+			multiBox {
+			  content
+			  title
+			}
+		  }
+		}
+
+
+
+          LocationMap: wpVentusautamain(slug: {eq: "location-section-page"}) {
+			map {
+				localFile {
+					childImageSharp {
+						gatsbyImageData(
+							quality: 60, 
+							webpOptions: {quality: 60})
+						}
+				  childSvg {
+					id
+					content {
+					  data
+					}
+				  }
+				}
+			  }
             }
+     
+		sellIcon: wpVentusautacore(slug: {eq: "svg-icons-content"}) {
+			iconSell {
+				  localFile {
+					childImageSharp {
+					  gatsbyImageData
+					}
+					childSvg {
+					  content {
+						data
+					  }
+					}
+				  }
+				}
+			}
+
+			productCardIcons: wpVentusautacore(slug: {eq: "svg-icons-content"}) {
+
+					price {
+					  localFile {
+						childImageSharp {
+						  gatsbyImageData
+						}
+						childSvg {
+						  content {
+							data
+						  }
+						}
+					  }
+					}
+	
+					vat {
+						localFile {
+						  childImageSharp {
+							gatsbyImageData
+						  }
+						  childSvg {
+							content {
+							  data
+							}
+						  }
+						}
+					  }
+	
+					  petrol {
+						localFile {
+						  childImageSharp {
+							gatsbyImageData
+						  }
+						  childSvg {
+							content {
+							  data
+							}
+						  }
+						}
+					  }
+	  
+					  road {
+						localFile {
+						  childImageSharp {
+							gatsbyImageData
+						  }
+						  childSvg {
+							content {
+							  data
+							}
+						  }
+						}
+					  }
+
+				}
+
+			icons: wpVentusautacore(slug: {eq: "svg-icons-content"}) {
+			iconSell {
+				  localFile {
+					childImageSharp {
+					  gatsbyImageData
+					}
+					childSvg {
+					  content {
+						data
+					  }
+					}
+				  }
+				}
+
+				engine {
+				  localFile {
+					childImageSharp {
+					  gatsbyImageData
+					}
+					childSvg {
+					  content {
+						data
+					  }
+					}
+				  }
+				}
+
+				gearboxAutomatic {
+					localFile {
+					  childImageSharp {
+						gatsbyImageData
+					  }
+					  childSvg {
+						content {
+						  data
+						}
+					  }
+					}
+				  }
+  
+				  gearboxManual {
+					localFile {
+					  childImageSharp {
+						gatsbyImageData
+					  }
+					  childSvg {
+						content {
+						  data
+						}
+					  }
+					}
+				  }
+
+				  petrol {
+					localFile {
+					  childImageSharp {
+						gatsbyImageData
+					  }
+					  childSvg {
+						content {
+						  data
+						}
+					  }
+					}
+				  }
+  
+				  road {
+					localFile {
+					  childImageSharp {
+						gatsbyImageData
+					  }
+					  childSvg {
+						content {
+						  data
+						}
+					  }
+					}
+				  }
+
+				  vat {
+					localFile {
+					  childImageSharp {
+						gatsbyImageData
+					  }
+					  childSvg {
+						content {
+						  data
+						}
+					  }
+					}
+				  }
+  
+			  price {
+					localFile {
+					  childImageSharp {
+						gatsbyImageData
+					  }
+					  childSvg {
+						content {
+						  data
+						}
+					  }
+					}
+				  }
+			}
+
+		products: allWpVentusautaproduct {
+
+			  nodes {
+				slug
+				productName
+				price
+				invoice {
+					checkboxValueOptions {
+					  value
+					}
+				  }
+				sold {
+					checkboxValueOptions {
+					  value
+					}
+				  }
+				oil
+				course
+				courseValue
+	  
+				mainImage {
+					localFile{
+						childImageSharp {
+							gatsbyImageData(
+								quality: 60, 
+								webpOptions: {quality: 60})
+							}
+						}
+					}
+			}
+		}
+
+		  LocationData: wpVentusautamain(slug: {eq: "location-section-page"}) {
+            ...CommonContent
+
+			map {
+				localFile {
+					childImageSharp {
+						gatsbyImageData(
+							quality: 60, 
+							webpOptions: {quality: 60})
+						}
+				  childSvg {
+					id
+					content {
+					  data
+					}
+				  }
+				}
+			  }
+
+			  paragraphs {
+				fieldsList {
+				  paragraph
+				}
+			  }
+
           }
 
-          features3 {
-            multiBox {
-              content
-              img {
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData
-                  }
-                  childSvg {
-                    content {
-                      data
-                    }
-                  }
-                }
-              }
-              title
-              type
-            }
+
+		  ContactData: wpVentusautamain(slug: {eq: "contact-section-page"}) {
+            ...CommonContent
           }
-        }
 
-        BlogData: wpVentuswebstartermain(slug: { eq: "blog-section-page" }) {
-          ...CommonContent
-          textSubheader
-          blogContent
-          blogContentSecondary
 
-        }
+		  AboutData: wpVentusautamain(slug: {eq: "about-section-page"}) {
+            ...CommonContent
+			paragraphs {
+				fieldsList {
+				  paragraph
+				}
+			  }
+          }
 
-        
-        defaultBlogPostImg: imageSharp(fixed: {originalName: {eq: "default-blog-post-image.png"}}) {
-          gatsbyImageData
-        }
+		  AboutFeatures: wpVentusautamain(slug: {eq: "about-section-page"}) {
 
-      }
-    `
-  );
+		  features1 {
+			multiBox {
+			  content
+			  img {
+				localFile {
+					childImageSharp {
+					  gatsbyImageData
+					}
+					childSvg {
+					  content {
+						data
+					  }
+					}
+				  }
+			  	}
+			  title
+			  type
+			}
+		  }
 
-  const randomPostArray = blogPosts.nodes/* .sort(() => Math.random() - 0.5) */
+		  features2 {
+			multiBox {
+			  content
+			  img {
+				localFile {
+					childImageSharp {
+					  gatsbyImageData
+					}
+					childSvg {
+					  content {
+						data
+					  }
+					}
+				  }
+			  	}
+			  title
+			  type
+			}
+		  }
 
-  let menuArray = [];
+		  features3 {
+			multiBox {
+			  content
+			  img {
+				localFile {
+					childImageSharp {
+					  gatsbyImageData
+					}
+					childSvg {
+					  content {
+						data
+					  }
+					}
+				  }
+			  	}
+			  title
+			  type
+			}
+		  }
 
-  menuArray = mainArray.edges.map(function (item) {
-    return {
-      path: item.node.sectionTitle.replace(" ", "-").toLowerCase(),
-      label: item.node.sectionTitle,
-      order: item.node.order,
-    };
-  });
+		}
+		  OfferData: wpVentusautamain(slug: {eq: "offer-section-page"}) {
+            ...CommonContent
+			textSubheader
+			paragraphs {
+				fieldsList {
+				  paragraph
+				}
+			  }
+          }
 
-  return (
-    <Layout>
-      <Seo title="Ventus Trade Auta" location="/" SeoData={SeoData} />
+	
 
-      <CustomedNav scroll={true} menuItems={menuArray} />
-      <HeroHeader small></HeroHeader>
-      <div
-        css={`
-          display: flex;
-          flex-direction: column;
-        `}
-      >
-        <Blog
-          itemData={randomPostArray}
-          BlogData={BlogData}
-          defaultBlogPostImg={defaultBlogPostImg}
-        />
-        <Contact
-          ContactData={ContactData}
-          ContactItems={ContactItems}
-        />
-        <About AboutData={AboutData} AboutFeatures={AboutFeatures} />
-      </div>
-    </Layout>
-  );
+	}
+	`
+	);
+
+
+	let menuArray = [];
+
+	menuArray = mainArray.edges.map(function (item) {
+  
+	  return {
+		path: item.node.sectionTitle.replace(" ", "-").toLowerCase(),
+		label: item.node.sectionTitle,
+		order: item.node.order
+	  };
+	});
+
+	return (
+		<Layout>
+			<Seo title="Ventus Trade Auta" location="/" SeoData={SeoData}/>
+
+<CustomedNav scroll={true} menuItems={menuArray} />
+			<HeroHeader
+				small
+			>
+			</HeroHeader>
+			<SeparateBox />
+			<div css={`display: flex; flex-direction: column;`}>
+			<Offer productData={products.nodes.sort(() => Math.random() - 0.5)} OfferData={OfferData} sellIcon={sellIcon} icons={icons} productCardIcons={productCardIcons}/>
+			<ContactLocation ContactData={ContactData} LocationData={LocationData} LocationMap={LocationMap} LocationAddress={LocationAddress} LocationContent={LocationContent} ContactItems={ContactItems} ContactBrandInfo={ContactBrandInfo}/>
+			<About AboutData={AboutData} AboutFeatures={AboutFeatures} />
+			</div>
+
+		</Layout>
+	)
 };
 
 export default Home;

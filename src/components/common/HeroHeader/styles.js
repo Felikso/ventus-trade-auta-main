@@ -4,20 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 export const HeroHeaderBox = styled.div`
 position: relative;
-height: ${({ styles }) => styles.heroHeight}vh;
-
-&:after {
-    content: ""; // ::before and ::after both require content
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(${({ styles }) => styles.blogPostImageGlowDeg}deg, ${({ styles }) => styles.blogPostImageGlow}, ${({ styles }) => styles.blogPostImageGlow2});
-    opacity: ${({ styles }) => styles.blogPostImageGlowOpacity}%;
-  
-  
-  }
+height: 95vh;
 
 ${({ small }) =>
         small &&
@@ -44,11 +31,6 @@ ${({ small }) =>
 .svg-bg {
     height: 100%;
     width: 100%;
-
-    svg {
-        height: 100%;
-        width: 100%;
-    }
 }
 
 `

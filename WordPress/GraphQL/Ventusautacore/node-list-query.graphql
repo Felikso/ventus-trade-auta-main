@@ -31,6 +31,25 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
           id
         }
       }
+      cookieBackground
+      cookieBannerShow
+      cookieButtonBackground
+      cookieButtonColor
+      cookieButtonText
+      cookieColor
+      cookieContent
+      cookieLink {
+        multiBox {
+          content
+          img {
+            __typename
+            id
+          }
+          title
+          type
+        }
+      }
+      cookieName
       country
       databaseId
       date
@@ -155,6 +174,17 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       road {
         __typename
         id
+      }
+      scrollBtn {
+        multiBox {
+          content
+          img {
+            __typename
+            id
+          }
+          title
+          type
+        }
       }
       secondary
       secondaryLight

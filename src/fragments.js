@@ -1,6 +1,6 @@
 import { graphql } from "gatsby"
 
-//main name = Ventuswebstarter
+//main name = Ventusauta
 
 export const fragments = graphql`
 
@@ -40,7 +40,7 @@ fragment WpMultiboxFieldFragment on WpMultiboxField {
 
   
 
-fragment Paragraphs on WpVentuswebstartermain {
+fragment Paragraphs on WpVentusautamain {
         mainContent
         paragraphs {
           fieldsList {
@@ -49,25 +49,25 @@ fragment Paragraphs on WpVentuswebstartermain {
         }
 }
 
-fragment CommonContent on WpVentuswebstartermain {
+fragment CommonContent on WpVentusautamain {
   order
   textHeader
   sectionTitle
 }
 
 
-fragment ErrorContent on WpVentuswebstartermain {
+fragment ErrorContent on WpVentusautamain {
     buttonText
     titleInfo
     infoText
 }
 
 
-fragment PolicyContent on WpVentuswebstartermain {
+fragment PolicyContent on WpVentusautamain {
     htmlContent
 }
 
-fragment FeaturesContent on WpVentuswebstartermain {
+fragment FeaturesContent on WpVentusautamain {
   features1 {
     multiBox {
       ...WpMultiboxFieldFragment
@@ -87,7 +87,7 @@ fragment FeaturesContent on WpVentuswebstartermain {
 
 
 
-fragment LocationContent on WpVentuswebstartermain {
+fragment LocationContent on WpVentusautamain {
   location_info {
     city
     street
@@ -106,7 +106,7 @@ fragment LocationContent on WpVentuswebstartermain {
   }
 }
 
-fragment ContactContentHours on WpVentuswebstartermain {
+fragment ContactContentHours on WpVentusautamain {
 
   openedHours {
     multiBox {
@@ -116,7 +116,7 @@ fragment ContactContentHours on WpVentuswebstartermain {
 
 }
 
-fragment ContactContent on WpVentuswebstartermain {
+fragment ContactContent on WpVentusautamain {
   phone {
     multiBox {
       ...WpMultiboxFieldFragment
@@ -143,7 +143,7 @@ fragment MenuThumbnail on File {
   }
 }
 
-fragment VentuswebstartermenuPreviewContent on WpVentuswebstartermenu {
+fragment VentusautamenuPreviewContent on WpVentusautamenu {
     productName
     id
     components
@@ -159,14 +159,13 @@ fragment VentuswebstartermenuPreviewContent on WpVentuswebstartermenu {
     quantity
     menuCategory
     properties {
-      checkboxOptions {
-        checked
-        value
-      }
+						  checkboxValueOptions  {
+	value
+ }
     }
   }
 
-fragment VentuswebstartermenuPreviewContentOld on WpVentuswebstartermenu {
+fragment VentusautamenuPreviewContentOld on WpVentusautamenu {
       title
       menu_category {
         promotion

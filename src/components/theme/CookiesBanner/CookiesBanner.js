@@ -5,22 +5,7 @@
  
 
  
- const CookiesBanner = ({ 
-   showBelow,
-   cookieBackground,
-   cookieButtonBackground,
-   cookieButtonColor,
-   cookieButtonText,
-   cookieColor,
-   cookieContent,
-   cookieName,
-   cookieLink,
-   cookieExpires,
-   cookieLinkColor,
-   cookieLinkHref,
-   cookieLinkName,
-   cookieLinkStyle,
-   }) => {
+ const CookiesBanner = ({ showBelow }) => {
 
   const [show, setShow] = useState(showBelow ? false : true)
 
@@ -37,51 +22,30 @@
           window.addEventListener(`scroll`, handleScroll)
           return () => window.removeEventListener(`scroll`, handleScroll)
       }
-  })
+  }, [])
  
-
+ 
    return (
      <>
             {show &&
 
              <CookieConsent
-             debug={true}
              location="top"
-             buttonText={cookieButtonText ? cookieButtonText : "Wszystko jasne!"}
-             cookieName={cookieName ? cookieName : "VentusWEBcookies"}
+             buttonText="Wszystko jasne!"
+             cookieName="myAwesomeCookieName2"
              style={{
               animation: `coockieBoxAnimation .5s ease-in-out normal forwards`, 
               animationIterationCount: "1", 
               transition: "all .5s ease-in-out",
-              display: "flex",
-              justifyContent: "space-evenly",
-              alignItems: "center",
-              zIndex: "10000",
-              background: cookieBackground ? cookieBackground : "#2B373B",
+              zIndex: "10000"
              }}
-             
-             buttonStyle={{ 
-              background: cookieButtonBackground ? cookieButtonBackground : "#4e503b", 
-              color: cookieButtonColor ? cookieButtonColor : "black",
-              fontSize: "13px", }}
-             expires={cookieExpires ? cookieExpires : 150}
+             buttonStyle={{ background: `${({ theme }) => theme.colors.secondary}`, fontSize: "12px" }}
+             expires={150}
              onAccept={() => {
               console.log(getCookieConsentValue())
             }}
-            
            >
-             <span style={{ 
-               fontSize: "10px",
-               display: "flex",
-               flexDirection: "column",
-               lineHeight: "1.5",
-               gap: "10px" }}>
-               {cookieContent ? cookieContent : "Aktualnie odwiedzana strona korzysta z plików cookies, więcej na ich temat w polityce prywatności witryny."}
-               <PoliceLink 
-               style={{
-                 color: cookieLinkColor ? cookieLinkColor : "brown"
-               }}
-               to={cookieLinkHref ? cookieLinkHref : "/polityka-prywatnosci"}>{cookieLinkName ? cookieLinkName : "Polityka Prywatności"}</PoliceLink></span>
+             <span style={{ fontSize: "10px" }}>Odwiedzana strona wykorzystuje Ciasteczka. Korzystając z niej bezpośrednio zostaje na to wyrażona zgoda. Więcej na ten temat w <PoliceLink to="/polityka-prywatnosci">Polityce Prywatności</PoliceLink></span>
 
          </CookieConsent>
 
@@ -103,6 +67,6 @@
  transition: 1s;
 
   &:hover{
-    filter: brightness(1.75);
+    color: green;
   }
  `

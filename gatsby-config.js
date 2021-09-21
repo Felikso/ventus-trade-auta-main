@@ -84,31 +84,15 @@ module.exports = {
 				 // 1 query for each data type
 				query: `
 				{
-					mainPages: allWpVentuswebstarterblog {
+					mainPages: allWpVentusautaproduct {
 						edges {
 						  node {
 							id
-							date
-							slug
-							 blogPostImage {
-								link
-								localFile {
-									url
-								  childImageSharp {
-									gatsbyImageData(quality: 60, webpOptions: { quality: 60 })
-								  }
-								  childSvg {
-									content {
-									  data
-									}
-								  }
-								}
-							  }
-							blogPostTags {
-							  checkboxValueOptions  {
-								value
-							  }
+							mainImage {
+							  sourceUrl
 							}
+							slug
+							date
 						  }
 						}
 					  }
@@ -124,7 +108,7 @@ module.exports = {
 							node: {
 								id: node.id,
 								slug: node.slug,
-								feature_image: node.blogPostImage.localFile.url,
+								feature_image: node.mainImage.sourceUrl,
 								updated_at: node.date
 								}
 							}

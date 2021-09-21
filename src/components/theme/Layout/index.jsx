@@ -8,21 +8,22 @@ import { CustomedFooter } from 'components/theme';
 import { Global } from 'styles';
 
 
+ 
+import { BottomNav } from "components/common"
 import { CookiesBanner } from "gatsby-plugin-cookies-banner"
 import { ScrollBtn } from 'gatsby-plugin-scroll-button'
 
-import { BottomNav } from "components/common"
 
 import './fonts.css';
 
 export const Layout = ({ children }) => {
   const { themeMode } = useContext(ThemeContext);
 
-  const { ThemeData, bottomNavContent, footerLinkContent, footerSocialIcons, footerContentData, cookiesBanner, scrollButton } = useStaticQuery(
+  const { ThemeData, bottomNavContent, footerLinkContent, footerSocialIcons, footerContentData,  cookiesBanner, scrollButton  } = useStaticQuery(
     graphql`
       query {
 
-        ThemeData: wpVentuswebstartercore(slug: {eq: "theme-content"}) {
+        ThemeData: wpVentusautacore(slug: {eq: "theme-content"}) {
           primary
           primaryLight
           secondary
@@ -35,8 +36,46 @@ export const Layout = ({ children }) => {
           background
         }
 
+                  scrollButton: wpVentusautacore(slug: {eq: "scroll-button-content"}) {
+            scrollBtn {
+              multiBox {
+                content
+                type
+                title
+                img {
+                  localFile {
+                    childSvg {
+                      content {
+                        data
+                      }
+                    }
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
+                }
+              } 
+            }
+          }
+          cookiesBanner: wpVentusautacore(slug: {eq: "cookies-banner-content"}) {
+            cookieBackground
+            cookieButtonBackground
+            cookieButtonColor
+            cookieButtonText
+            cookieColor
+            cookieContent
+            cookieName
+            cookieBannerShow
+            cookieLink {
+              multiBox {
+                content
+                title
+                type
+              }
+            }
+          }
 
-        footerSocialIcons: wpVentuswebstartercore(slug: {eq: "links-content"}) {
+        footerSocialIcons: wpVentusautacore(slug: {eq: "links-content"}) {
           phoneFooter {
               multiBox {
                 content
@@ -99,7 +138,7 @@ export const Layout = ({ children }) => {
 
         }
 
-        footerLinkContent: wpVentuswebstartercore(slug: {eq: "links-content"}) {
+        footerLinkContent: wpVentusautacore(slug: {eq: "links-content"}) {
           footerInfo {
               multiBox {
                 content
@@ -108,12 +147,12 @@ export const Layout = ({ children }) => {
             }
           }
 
-          footerContentData: wpVentuswebstartercore(slug: {eq: "site-content"}) {
+          footerContentData: wpVentusautacore(slug: {eq: "site-content"}) {
             siteTitle
             siteSlogan
           }
 
-          bottomNavContent: wpVentuswebstartercore(slug: {eq: "bottom-nav-content"}) {
+          bottomNavContent: wpVentusautacore(slug: {eq: "bottom-nav-content"}) {
             button1 {
               multiBox {
                 content
@@ -129,46 +168,6 @@ export const Layout = ({ children }) => {
               }
             }
           }
-
-          scrollButton: wpVentuswebstartercore(slug: {eq: "scroll-button-content"}) {
-            scrollBtn {
-              multiBox {
-                content
-                type
-                title
-                img {
-                  localFile {
-                    childSvg {
-                      content {
-                        data
-                      }
-                    }
-                    childImageSharp {
-                      gatsbyImageData
-                    }
-                  }
-                }
-              } 
-            }
-          }
-          cookiesBanner: wpVentuswebstartercore(slug: {eq: "cookies-banner-content"}) {
-            cookieBackground
-            cookieButtonBackground
-            cookieButtonColor
-            cookieButtonText
-            cookieColor
-            cookieContent
-            cookieName
-            cookieBannerShow
-            cookieLink {
-              multiBox {
-                content
-                title
-                type
-              }
-            }
-          }
-
       }
 `
 );
@@ -287,7 +286,6 @@ const {
     const buttonScrollColorHover = buttonScrollColorsHover
       .filter(item => item !== undefined)[0]['content']
 
-   
 const {
   primary,
   primaryLight,
@@ -303,7 +301,7 @@ const {
   background
 
 } = ThemeData
-    
+
 const color = theme.colors
 const colorDark = themeDark.colors
 
@@ -333,7 +331,6 @@ colorDark.background = fontColor ? fontColor : colorDark.background
     <>
       <ThemeProviderStyle theme={themeMode == 'light' ? theme : themeDark} >
         <Global theme={themeMode == 'light' ? theme : themeDark} />
-
         <CookiesBanner
         cookieBackground={cookieBackground}
         cookieButtonBackground={cookieButtonBackground}
@@ -356,7 +353,6 @@ colorDark.background = fontColor ? fontColor : colorDark.background
         buttonScrollColor={buttonScrollColor}
         buttonScrollColorHover={buttonScrollColorHover}
          />
-
         {children}
         <BottomNav contactData={bottomNavContent} />
         <CustomedFooter footerLinkContent={footerLinkContent} footerSocialIcons={footerSocialIcons} footerContentData={footerContentData}/>

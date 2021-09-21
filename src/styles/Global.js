@@ -1,12 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const Global = createGlobalStyle`
-
-@keyframes coockieBoxAnimation {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
   html {
 
     

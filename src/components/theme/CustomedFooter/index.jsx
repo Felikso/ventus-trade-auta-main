@@ -6,7 +6,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import { DefaultIcon, PaddingWrapper } from "components/common"
 
-/* import { footerIcons, footerInfo, contactItems } from "constans" */
+import { footerIcons, footerInfo, contactItems } from "constans"
 
 import { FooterHeader, FooterIconsBox, FooterLogoLink, FooterBrandLogo, FooterIcon, FooterWrapper, FooterSection, FooterLink, FooterInfo, FooterInfoBox, GridBox } from './styles'
 
@@ -22,14 +22,14 @@ export const CustomedFooter = ({ footerLinkContent, footerSocialIcons, footerCon
             </FooterHeader>
             <FooterSection>
                 <GridBox>
-{/*                     {contactItems.map((item, index) => (
+                    {contactItems.map((item, index) => (
                         <FooterLink
                             href={item.href}
                             key={index}
                             title={item.alt} >
                             {item.icon}{item.content}
                         </FooterLink>
-                    ))} */}
+                    ))}
                 </GridBox>
 
                 <GridBox>
@@ -46,42 +46,44 @@ export const CustomedFooter = ({ footerLinkContent, footerSocialIcons, footerCon
 
 {Object.keys(footerSocialIcons).map(((keyName, i) => {
 
-const objects = footerSocialIcons[keyName].multiBox;
-
-const objectIcons = objects.map((item, i) => {
+const socials = footerSocialIcons[keyName].multiBox;
+console.log(socials)
+const socialIcons = socials.map((item, i) => {
   if (item['type'] == "icon") {
     return item
   }
 })//check for icon option just to be safe
 
-const objectNames = objects.map((item, i) => {
+const socialNames = socials.map((item, i) => {
   if (item['type'] == "content") {
     return item
   }
 })
 //check for content option just to be safe
 
-const objectHrefs = objects.map((item, i) => {
+const socialHrefs = socials.map((item, i) => {
   if (item['type'] == "href") {
     return item
   }
 })
 //check for content option just to be safe
 
-const objectIcon = objectIcons
+const socialIcon = socialIcons
   .filter(item => item !== undefined)[0]
-  
-const objectName = objectNames
+  console.log(socialIcon)
+const socialName = socialNames
   .filter(item => item !== undefined)[0]['content']
 
-const objectHref = objectHrefs
+const socialHref = socialHrefs
   .filter(item => item !== undefined)[0]['content']
   
-  const icon = objectIcon.img?.localFile.childSvg
+  const icon = socialIcon.img?.localFile.childSvg
 
-  const img = objectIcon.img?.localFile.childImageSharp
+  const img = socialIcon.img?.localFile.childImageSharp
 
-  const alt = objectIcon.img?.altText
+  const alt = socialIcon.img?.altText
+
+  console.log(icon)
 
 
 return (
@@ -90,10 +92,10 @@ return (
       ?
       <FooterIcon
         key={uuid()}
-        href={objectHref}
+        href={socialHref}
       >
         <GatsbyImage
-          alt={alt ? alt : objectName}
+          alt={socialName}
           image={img.gatsbyImageData}
         />
       </FooterIcon>
@@ -106,7 +108,7 @@ return (
 
         <FooterIcon
           key={uuid()}
-          href={objectHref}
+          href={socialHref}
           dangerouslySetInnerHTML={{ __html: icon.content.data }}
         >
         </FooterIcon>
@@ -115,7 +117,7 @@ return (
 
         <FooterIcon
           key={uuid()}
-          href={objectHref}
+          href={socialHref}
         >
           <DefaultIcon
             className={"svg-icon"}

@@ -38,7 +38,7 @@ export const StyledBottomNav = styled.div`
   justify-content: space-between;
   align-items: center;
   font-weight: bolder;
-  background: ${({ theme }) => theme.colors.primary}; 
+  background: ${({ theme }) => theme.colors.bottomNav}; 
   display: flex;
   flex-direction: row;
   justify-content: space-around;

@@ -9,7 +9,7 @@ const NotFound = () => {
 		graphql`
 	query {
 
-		SeoData: wpVentuswebstartercore(slug: {eq: "seo-content"}) {
+		SeoData: wpVentusautacore(slug: {eq: "seo-content"}) {
             author
             city
             country
@@ -42,7 +42,7 @@ const NotFound = () => {
             url
           }
 
-         ErrorData: wpVentuswebstartermain(slug: {eq: "error-external-page"}) {
+         ErrorData: wpVentusautamain(slug: {eq: "error-external-page"}) {
 			titleInfo
 			contentInfo
 			buttonText

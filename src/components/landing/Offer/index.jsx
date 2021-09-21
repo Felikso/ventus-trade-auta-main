@@ -7,7 +7,7 @@ import { ProductCard } from 'components/product'
 
 
 
-export const Offer = ({ itemData, OfferData, sellIcon, icons, productCardIcons }) => {
+export const Offer = ({ productData, OfferData, sellIcon, icons, productCardIcons }) => {
 
     const order = OfferData.order
 
@@ -74,17 +74,13 @@ export const Offer = ({ itemData, OfferData, sellIcon, icons, productCardIcons }
             </OffersWrapper>
             <ProductsSectionWrapper>
 
-            <div>
-{itemData.map((post, i) => (
-    <p>{i}</p>
-))}
-</div>
 
-{/*                 <ProductsWrapper secondary
+
+                <ProductsWrapper secondary
                 css={`
                     padding: 50px 0 100px;
                 `}>
-                    {itemData.map((product, i) => {
+                    {productData.map((product, i) => {
 
                         return (
                             <>
@@ -103,7 +99,7 @@ export const Offer = ({ itemData, OfferData, sellIcon, icons, productCardIcons }
                 `}>
                     <h4>{subTitle}</h4>
                 </SectionTitle>
-  */}           </ProductsSectionWrapper>
+            </ProductsSectionWrapper>
         </Wrapper>
 
 

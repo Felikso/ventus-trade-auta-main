@@ -19,7 +19,7 @@ export const CustomedNav = ({ menuItems, scroll, Title, LogoImg, LogoAlt}) => {
         const { HeaderData } = useStaticQuery(
             graphql`
                 query {
-                  HeaderData: wpVentuswebstartercore(slug: {eq: "site-content"}) {
+                  HeaderData: wpVentusautacore(slug: {eq: "site-content"}) {
                         siteTitle
                         siteLogo {
                             localFile {

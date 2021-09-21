@@ -9,7 +9,7 @@ const PolicyPage = () => {
 		graphql`
 	query {
 
-		SeoData: wpVentuswebstartercore(slug: {eq: "seo-content"}) {
+		SeoData: wpVentusautacore(slug: {eq: "seo-content"}) {
             author
             city
             country
@@ -42,7 +42,7 @@ const PolicyPage = () => {
             url
           }
 
-         PolicyData: wpVentuswebstartermain(slug: {eq: "policy-external-page"}) {
+         PolicyData: wpVentusautamain(slug: {eq: "policy-external-page"}) {
             policyContent
             policyTitle
             headerImage {

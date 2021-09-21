@@ -30,6 +30,25 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
         id
       }
     }
+    cookieBackground
+    cookieBannerShow
+    cookieButtonBackground
+    cookieButtonColor
+    cookieButtonText
+    cookieColor
+    cookieContent
+    cookieLink {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    cookieName
     country
     databaseId
     date
@@ -154,6 +173,17 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     road {
       __typename
       id
+    }
+    scrollBtn {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
     }
     secondary
     secondaryLight
