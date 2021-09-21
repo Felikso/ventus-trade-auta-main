@@ -2,7 +2,7 @@ import React from 'react';
 import { PropCard, SectionTitle, MainWrapper } from 'components/common';
 import { Wrapper, ContactIconsBox, ToggleableBg, GridContactInfo, ContactSectionsBox, ContactSectionWrapper, ReverseWrapper } from './styles';
 
-import { contactItems } from "constans"
+/* import { contactItems } from "constans" */
 
 
 
@@ -14,14 +14,14 @@ export const Contact = () => (
     <ContactSectionWrapper>
       <ReverseWrapper fluid>
         <ContactIconsBox>
-          {
+{/*           {
             contactItems.map((item, i) => (
               <a href={item.href} title={item.alt}><PropCard secondary content={item.content}>
                 {item.icon}
               </PropCard>
               </a>
             ))
-          }
+          } */}
         </ContactIconsBox>
         <ContactSectionsBox>
           <ToggleableBg />

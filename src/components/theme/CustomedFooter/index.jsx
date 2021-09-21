@@ -6,7 +6,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import { DefaultIcon, PaddingWrapper } from "components/common"
 
-import { footerIcons, footerInfo, contactItems } from "constans"
+/* import { footerIcons, footerInfo, contactItems } from "constans" */
 
 import { FooterHeader, FooterIconsBox, FooterLogoLink, FooterBrandLogo, FooterIcon, FooterWrapper, FooterSection, FooterLink, FooterInfo, FooterInfoBox, GridBox } from './styles'
 
@@ -22,14 +22,14 @@ export const CustomedFooter = ({ footerLinkContent, footerSocialIcons, footerCon
             </FooterHeader>
             <FooterSection>
                 <GridBox>
-                    {contactItems.map((item, index) => (
+{/*                     {contactItems.map((item, index) => (
                         <FooterLink
                             href={item.href}
                             key={index}
                             title={item.alt} >
                             {item.icon}{item.content}
                         </FooterLink>
-                    ))}
+                    ))} */}
                 </GridBox>
 
                 <GridBox>

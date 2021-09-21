@@ -7,7 +7,7 @@ import { GridMainWrapper, ReverseBox, LocationContainer, MapLocation, AdressSect
 import { SectionTitle, DefaultWrapper, PropCard, DefaultIcon } from 'components/common'
 
 
-import { contactItems } from "constans"
+/* import { contactItems } from "constans" */
 
 import { ContentBox, PaddingWrapper } from 'components/common'
 import { deviceType } from 'detect-it';
