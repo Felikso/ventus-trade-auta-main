@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-plugin-cookies-banner",
+  "name": "gatsby-plugin-scroll-button",
   "version": "0.0.1",
-  "description": "A Gatsby Plugin that add cookies banner components for your Gatsby site",
+  "description": "A Gatsby Plugin that add scroll button components for your Gatsby site",
   "main": "index.js",
   "scripts": {
     "publish": "npm login",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Felikso/gatsby-plugin-cookies-banner.git"
+    "url": "git+https://github.com/Felikso/gatsby-plugin-scroll-button.git"
   },
   "keywords": [
     "gatsby",
@@ -18,9 +18,9 @@
   "author": "Aleksandra Śniegucka",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Felikso/gatsby-plugin-cookies-banner/issues"
+    "url": "https://github.com/Felikso/gatsby-plugin-scroll-button/issues"
   },
-  "homepage": "https://github.com/Felikso/gatsby-plugin-cookies-banner#readme",
+  "homepage": "https://github.com/Felikso/gatsby-plugin-scroll-button#readme",
   "peerDependencies": {
     "gatsby": "^3.1.2",
     "react": "^17.0.2",

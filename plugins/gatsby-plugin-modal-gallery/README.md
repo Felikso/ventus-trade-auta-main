@@ -1,3 +1,3 @@
-# gatsby-plugin-modal-gallery
+# gatsby-plugin-cookies-banner
 
-A Gatsby Plugin that add modal gallery components for your Gatsby site
+A Gatsby Plugin that add cookiers banner components for your Gatsby site
