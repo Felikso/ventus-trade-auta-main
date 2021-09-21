@@ -1,0 +1,201 @@
+query PREVIEW_QUERY($id: ID!) {
+  ventusautaproduct(id: $id, idType: ID, asPreview: true) {
+    brand
+    brandEmail
+    brandFullName
+    brandNip
+    brandPhone
+    brandRegon
+    buttonText
+    capacity
+    contentType {
+      node {
+        id
+      }
+    }
+    course
+    courseValue
+    currency
+    databaseId
+    date
+    dateGmt
+    description
+    desiredSlug
+    drive
+    editor
+    enclosure
+    features1 {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    features2 {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    features3 {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    gallery {
+      imagesList {
+        image {
+          __typename
+          id
+        }
+      }
+    }
+    gearbox
+    generation
+    grossPrice
+    guid
+    htmlContent
+    id
+    imported {
+      checkboxValueOptions {
+        value
+      }
+    }
+    infoText
+    invoice {
+      checkboxValueOptions {
+        value
+      }
+    }
+    isContentNode
+    isTermNode
+    kind
+    lastEditedBy {
+      node {
+        id
+      }
+    }
+    link
+    loanPrice
+    loanable {
+      checkboxValueOptions {
+        value
+      }
+    }
+    locationInfo1 {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    locationInfo2 {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    mail {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    mainImage {
+      __typename
+      id
+    }
+    map {
+      __typename
+      id
+    }
+    model
+    modified
+    modifiedGmt
+    oil
+    petrol
+    phone {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    power
+    price
+    productFullName
+    productName
+    productSlug
+    properties {
+      checkboxValueOptions {
+        value
+      }
+    }
+    secondImage {
+      __typename
+      id
+    }
+    slug
+    sold {
+      checkboxValueOptions {
+        value
+      }
+    }
+    status
+    template {
+      templateName
+      __typename
+    }
+    title
+    titleInfo
+    type
+    uri
+    vin
+    whatsapp {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    year
+    __typename
+  }
+}

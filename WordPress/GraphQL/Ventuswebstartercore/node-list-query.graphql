@@ -1,0 +1,243 @@
+query NODE_LIST_QUERY($first: Int!, $after: String) {
+  ventuswebstartercores(first: $first, after: $after) {
+    nodes {
+      author
+      background
+      button1 {
+        multiBox {
+          content
+          img {
+            __typename
+            id
+          }
+          title
+          type
+        }
+      }
+      button2 {
+        multiBox {
+          content
+          img {
+            __typename
+            id
+          }
+          title
+          type
+        }
+      }
+      city
+      contentType {
+        node {
+          id
+        }
+      }
+      cookieBackground
+      cookieBannerShow
+      cookieButtonBackground
+      cookieButtonColor
+      cookieButtonText
+      cookieColor
+      cookieContent
+      cookieLink {
+        multiBox {
+          content
+          img {
+            __typename
+            id
+          }
+          title
+          type
+        }
+      }
+      cookieName
+      country
+      databaseId
+      date
+      dateGmt
+      defaultDescription
+      defaultTitle
+      desiredSlug
+      dir
+      email
+      enclosure
+      engine {
+        __typename
+        id
+      }
+      facebook
+      facebookFooter {
+        multiBox {
+          content
+          img {
+            __typename
+            id
+          }
+          title
+          type
+        }
+      }
+      fontColor
+      footerInfo {
+        multiBox {
+          content
+          img {
+            __typename
+            id
+          }
+          title
+          type
+        }
+      }
+      foundingDate
+      gearboxAutomatic {
+        __typename
+        id
+      }
+      gearboxManual {
+        __typename
+        id
+      }
+      github
+      googleMyBusinessFooter {
+        multiBox {
+          content
+          img {
+            __typename
+            id
+          }
+          title
+          type
+        }
+      }
+      guid
+      iconSell {
+        __typename
+        id
+      }
+      id
+      instagram
+      isContentNode
+      isTermNode
+      lang
+      lastEditedBy {
+        node {
+          id
+        }
+      }
+      legalName
+      link
+      logoUrl
+      mailFooter {
+        multiBox {
+          content
+          img {
+            __typename
+            id
+          }
+          title
+          type
+        }
+      }
+      modified
+      modifiedGmt
+      moveFillBgBottom
+      moveFillBgBottomDarkmode
+      moveFillBgTop
+      moveFillBgTopDarkmode
+      petrol {
+        __typename
+        id
+      }
+      phone
+      phoneFooter {
+        multiBox {
+          content
+          img {
+            __typename
+            id
+          }
+          title
+          type
+        }
+      }
+      power {
+        __typename
+        id
+      }
+      price {
+        __typename
+        id
+      }
+      primary
+      primaryLight
+      region
+      road {
+        __typename
+        id
+      }
+      scrollBtn {
+        multiBox {
+          content
+          img {
+            __typename
+            id
+          }
+          title
+          type
+        }
+      }
+      secondary
+      secondaryLight
+      siteBrand
+      siteDescription
+      siteHeader {
+        __typename
+        id
+      }
+      siteLogo {
+        __typename
+        id
+      }
+      siteSlogan
+      siteSubTitle
+      siteTitle
+      slug
+      status
+      template {
+        templateName
+        __typename
+      }
+      third
+      thirdDarkmode
+      thumbnail {
+        __typename
+        id
+      }
+      title
+      twitter
+      uri
+      url
+      vat {
+        __typename
+        id
+      }
+      whatsappFooter {
+        multiBox {
+          content
+          img {
+            __typename
+            id
+          }
+          title
+          type
+        }
+      }
+      zipCode
+      __typename
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
