@@ -564,7 +564,7 @@ const ProductPage = ({ data, key }) => {
               <p><span>Model:</span>{model}</p>
               <p><span>Rok:</span>{year}</p>
               {grossPrice !== '0' && (<p><span>Cena brutto:</span>{grossPrice}</p>)}
-              {price !== '0' && (<p><span>Cena netto:</span>{price}</p>)}
+              {price !== '0' && (<p><span>Cena:</span>{price}</p>)}
               {generation !== '0' && (<p><span>Generacja:</span>{generation}</p>)}
               {drive !== '0' && (<p><span>Napęd:</span>{drive}</p>)}
 
