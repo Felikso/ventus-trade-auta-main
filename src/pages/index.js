@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby"
 import { Layout, CustomedNav } from "components/theme"
 import { Seo, HeroHeader, SeparateBox } from "components/common";
-import { Offer, About, ContactLocation } from "components/landing";
+import { Offer, About, ContactLocation, Contact } from "components/landing";
 
 
 const Home = () => {
@@ -513,6 +513,8 @@ const Home = () => {
 	`
 	);
 
+ 
+ 
 
 	let menuArray = [];
 
@@ -536,8 +538,16 @@ const Home = () => {
 			</HeroHeader>
 			<SeparateBox />
 			<div css={`display: flex; flex-direction: column;`}>
-			<Offer productData={products.nodes.sort(() => Math.random() - 0.5)} OfferData={OfferData} sellIcon={sellIcon} icons={icons} productCardIcons={productCardIcons}/>
-			<ContactLocation ContactData={ContactData} LocationData={LocationData} LocationMap={LocationMap} LocationAddress={LocationAddress} LocationContent={LocationContent} ContactItems={ContactItems} ContactBrandInfo={ContactBrandInfo}/>
+			<Offer productData={products.nodes} OfferData={OfferData} sellIcon={sellIcon} icons={icons} productCardIcons={productCardIcons}/>
+			<ContactLocation 
+			ContactData={ContactData} 
+			LocationData={LocationData} 
+			LocationMap={LocationMap} 
+			LocationAddress={LocationAddress} 
+			LocationContent={LocationContent} 
+			ContactItems={ContactItems} 
+			ContactBrandInfo={ContactBrandInfo}
+			/>
 			<About AboutData={AboutData} AboutFeatures={AboutFeatures} />
 			</div>
 

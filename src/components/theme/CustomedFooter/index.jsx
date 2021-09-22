@@ -47,7 +47,7 @@ export const CustomedFooter = ({ footerLinkContent, footerSocialIcons, footerCon
 {Object.keys(footerSocialIcons).map(((keyName, i) => {
 
 const socials = footerSocialIcons[keyName].multiBox;
-console.log(socials)
+
 const socialIcons = socials.map((item, i) => {
   if (item['type'] == "icon") {
     return item
@@ -70,7 +70,7 @@ const socialHrefs = socials.map((item, i) => {
 
 const socialIcon = socialIcons
   .filter(item => item !== undefined)[0]
-  console.log(socialIcon)
+
 const socialName = socialNames
   .filter(item => item !== undefined)[0]['content']
 
@@ -82,8 +82,6 @@ const socialHref = socialHrefs
   const img = socialIcon.img?.localFile.childImageSharp
 
   const alt = socialIcon.img?.altText
-
-  console.log(icon)
 
 
 return (

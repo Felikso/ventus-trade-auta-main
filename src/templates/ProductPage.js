@@ -10,16 +10,6 @@ import { ProductWrapper, VinBox, ParametersBox, GridContentBox, GridBoxDetails, 
 
 import { ReactComponent as VentusIcon } from 'assets/svgs/vt-logo.svg'
 
-import { ReactComponent as PriceIcon } from 'assets/product-props/price.svg'
-import { ReactComponent as VatIcon } from 'assets/product-props/vat.svg'
-import { ReactComponent as PetrolIcon } from 'assets/product-props/petrol.svg'
-import { ReactComponent as RoadIcon } from 'assets/product-props/road.svg'
-import { ReactComponent as AutomatIcon } from 'assets/product-props/gearboxAutomatic.svg'
-import { ReactComponent as ManualIcon } from 'assets/product-props/gearboxManual.svg'
-import { ReactComponent as HorseIcon } from 'assets/product-props/powerhorse.svg'
-import { ReactComponent as EngineIcon } from 'assets/product-props/engine.svg'
-
-
 
 
 export const query = graphql`
@@ -481,10 +471,6 @@ const ProductPage = ({ data, key }) => {
     iconsArray.map((item, i ) => {
         item.content = contentArray[i];
     })
-
-
-      console.log(iconsArray)
-      console.log('iconsArray')
 
 
   return (
