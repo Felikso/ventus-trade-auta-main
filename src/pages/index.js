@@ -537,7 +537,7 @@ const Home = () => {
 			>
 			</HeroHeader>
 			<SeparateBox />
-			<div css={`display: flex; flex-direction: column;`}>
+			<div css={`display: flex; flex-direction: column; max-width: 1600px; margin: auto;`}>
 			<Offer productData={products.nodes} OfferData={OfferData} sellIcon={sellIcon} icons={icons} productCardIcons={productCardIcons}/>
 			<ContactLocation 
 			ContactData={ContactData} 
