@@ -19,7 +19,7 @@ import './fonts.css';
 export const Layout = ({ children }) => {
   const { themeMode } = useContext(ThemeContext);
 
-  const { ThemeData, bottomNavContent, footerLinkContent, footerSocialIcons, footerContentData,  cookiesBanner, scrollButton  } = useStaticQuery(
+  const { ThemeData, bottomNavContent, footerContactItems, footerLinkContent, footerSocialIcons, footerContentData,  cookiesBanner, scrollButton  } = useStaticQuery(
     graphql`
       query {
 
@@ -36,7 +36,7 @@ export const Layout = ({ children }) => {
           background
         }
 
-                  scrollButton: wpVentusautacore(slug: {eq: "scroll-button-content"}) {
+          scrollButton: wpVentusautacore(slug: {eq: "scroll-button-content"}) {
             scrollBtn {
               multiBox {
                 content
@@ -74,6 +74,69 @@ export const Layout = ({ children }) => {
               }
             }
           }
+
+        footerContactItems: wpVentusautacore(slug: {eq: "links-content"}) {
+          phoneFooter {
+              multiBox {
+                content
+                type
+                title
+                img {
+                  localFile {
+                    childSvg {
+                      content {
+                        data
+                      }
+                    }
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
+                }
+              }
+            }
+
+            mailFooter {
+              multiBox {
+                content
+                type
+                title
+                img {
+                  localFile {
+                    childSvg {
+                      content {
+                        data
+                      }
+                    }
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
+                }
+              }
+            }
+
+            whatsappFooter {
+              multiBox {
+                content
+                type
+                title
+                img {
+                  localFile {
+                    childSvg {
+                      content {
+                        data
+                      }
+                    }
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
+                }
+              }
+            }
+
+        }
 
         footerSocialIcons: wpVentusautacore(slug: {eq: "links-content"}) {
           phoneFooter {
@@ -355,7 +418,11 @@ colorDark.background = fontColor ? fontColor : colorDark.background
          />
         {children}
         <BottomNav contactData={bottomNavContent} />
-        <CustomedFooter footerLinkContent={footerLinkContent} footerSocialIcons={footerSocialIcons} footerContentData={footerContentData}/>
+        <CustomedFooter 
+        footerLinkContent={footerLinkContent} 
+        footerSocialIcons={footerSocialIcons} 
+        footerContentData={footerContentData}
+        footerContactItems={footerContactItems}/>
       </ThemeProviderStyle>
     </>
 

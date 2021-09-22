@@ -6,12 +6,10 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import { DefaultIcon, PaddingWrapper } from "components/common"
 
-/* import { footerIcons, footerInfo, contactItems } from "constans" */
-
 import { FooterHeader, FooterIconsBox, FooterLogoLink, FooterBrandLogo, FooterIcon, FooterWrapper, FooterSection, FooterLink, FooterInfo, FooterInfoBox, GridBox } from './styles'
 
 
-export const CustomedFooter = ({ footerLinkContent, footerSocialIcons, footerContentData }) => {
+export const CustomedFooter = ({ footerLinkContent, footerSocialIcons, footerContentData, footerContactItems }) => {
 
   const { siteTitle, siteSlogan } = footerContentData
     return (
@@ -22,7 +20,96 @@ export const CustomedFooter = ({ footerLinkContent, footerSocialIcons, footerCon
             </FooterHeader>
             <FooterSection>
                 <GridBox>
-{/*                     {contactItems.map((item, index) => (
+                {Object.keys(footerContactItems).map(((keyName, i) => {
+console.log(footerContactItems)
+const socials = footerContactItems[keyName].multiBox;
+
+const socialIcons = socials.map((item, i) => {
+  if (item['type'] == "icon") {
+    return item
+  }
+})//check for icon option just to be safe
+
+const socialNames = socials.map((item, i) => {
+  if (item['type'] == "content") {
+    return item
+  }
+})
+//check for content option just to be safe
+
+const socialHrefs = socials.map((item, i) => {
+  if (item['type'] == "href") {
+    return item
+  }
+})
+//check for content option just to be safe
+
+const socialIcon = socialIcons
+  .filter(item => item !== undefined)[0]
+
+const socialName = socialNames
+  .filter(item => item !== undefined)[0]['content']
+
+const socialHref = socialHrefs
+  .filter(item => item !== undefined)[0]['content']
+  
+  const icon = socialIcon.img?.localFile.childSvg
+
+  const img = socialIcon.img?.localFile.childImageSharp
+
+  const alt = socialIcon.img?.altText
+
+
+return (
+  <>
+                           <FooterLink
+                            href={socialHref}
+                            key={uuid()}
+                            title={socialName} > {img
+      ?
+ 
+        <GatsbyImage
+          alt={socialName}
+          image={img.gatsbyImageData}
+        />
+ 
+
+      :
+
+      icon
+
+        ?
+
+        <div
+ 
+          href={socialHref}
+          dangerouslySetInnerHTML={{ __html: icon.content.data }}
+        >
+        </div>
+
+        :
+
+/*         <FooterIcon
+ 
+          href={socialHref}
+        > */
+          <DefaultIcon
+            className={"svg-icon"}
+            label={keyName}
+            aria-hidden="true"
+            role="img"
+            focusable="false"
+
+          />
+/*         </FooterIcon> */
+    }
+    {socialName}</FooterLink>
+  </>
+)
+
+}))
+}
+                    {/* {footerContactItems.map((item, index) => (
                         <FooterLink
                             href={item.href}
                             key={index}
