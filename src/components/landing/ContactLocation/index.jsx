@@ -35,9 +35,9 @@ export const ContactLocation = ({ LocationData, LocationAddress, ContactData, Co
     const contactOrder = ContactData.order
 
     return (
-        <GridMainWrapper  >
+        <GridMainWrapper css={`{ order: ${contactOrder}; }`} >
 
-            <DefaultWrapper fluid id={id1} css={`{ order: ${locationOrder}; }`}>
+            <DefaultWrapper fluid id={id1} >
                 <SectionTitle>
                     <h4>{title1}</h4>
                 </SectionTitle>
