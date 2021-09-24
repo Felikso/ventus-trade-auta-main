@@ -1,6 +1,7 @@
 query NODE_LIST_QUERY($first: Int!, $after: String) {
   ventuswebstarterblogs(first: $first, after: $after) {
     nodes {
+      author
       blogPostAuthor
       blogPostCardHeight
       blogPostContent

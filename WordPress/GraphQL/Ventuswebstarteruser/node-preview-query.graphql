@@ -1,0 +1,111 @@
+query PREVIEW_QUERY($id: ID!) {
+  ventuswebstarteruser(id: $id, idType: ID, asPreview: true) {
+    aboutFacebook {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    aboutMail {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    aboutMessenger {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    aboutPhone {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    aboutWhatsapp {
+      multiBox {
+        content
+        img {
+          __typename
+          id
+        }
+        title
+        type
+      }
+    }
+    contentType {
+      node {
+        id
+      }
+    }
+    databaseId
+    date
+    dateGmt
+    desiredSlug
+    enclosure
+    guid
+    id
+    isContentNode
+    isTermNode
+    lastEditedBy {
+      node {
+        id
+      }
+    }
+    link
+    modified
+    modifiedGmt
+    slug
+    status
+    template {
+      templateName
+      __typename
+    }
+    title
+    uri
+    userProfileBackground {
+      __typename
+      id
+    }
+    userProfileBio
+    userProfileBirthday
+    userProfileContentBg
+    userProfileContentText
+    userProfileEmail
+    userProfileImage {
+      __typename
+      id
+    }
+    userProfileName
+    userProfileNickname
+    userProfileRoles {
+      checkboxValueOptions {
+        value
+      }
+    }
+    userProfileSurname
+    __typename
+  }
+}

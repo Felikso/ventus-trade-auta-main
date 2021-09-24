@@ -1,5 +1,6 @@
 query PREVIEW_QUERY($id: ID!) {
   ventuswebstarterblog(id: $id, idType: ID, asPreview: true) {
+    author
     blogPostAuthor
     blogPostCardHeight
     blogPostContent

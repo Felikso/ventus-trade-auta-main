@@ -3,6 +3,18 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
     nodes {
       author
       background
+      blogCardCardHeight
+      blogCardCardWidth
+      blogCardDefaultImage {
+        __typename
+        id
+      }
+      blogCardExcerpt
+      blogCardImageGlow
+      blogCardImageGlow2
+      blogCardImageGlowDeg
+      blogCardImageGlowOpacity
+      blogCardImageHeight
       button1 {
         multiBox {
           content

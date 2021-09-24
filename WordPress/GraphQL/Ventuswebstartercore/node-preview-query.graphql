@@ -2,6 +2,18 @@ query PREVIEW_QUERY($id: ID!) {
   ventuswebstartercore(id: $id, idType: ID, asPreview: true) {
     author
     background
+    blogCardCardHeight
+    blogCardCardWidth
+    blogCardDefaultImage {
+      __typename
+      id
+    }
+    blogCardExcerpt
+    blogCardImageGlow
+    blogCardImageGlow2
+    blogCardImageGlowDeg
+    blogCardImageGlowOpacity
+    blogCardImageHeight
     button1 {
       multiBox {
         content

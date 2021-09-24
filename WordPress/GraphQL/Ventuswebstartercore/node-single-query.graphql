@@ -2,6 +2,18 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
   ventuswebstartercore(id: $id) {
     author
     background
+    blogCardCardHeight
+    blogCardCardWidth
+    blogCardDefaultImage {
+      __typename
+      id
+    }
+    blogCardExcerpt
+    blogCardImageGlow
+    blogCardImageGlow2
+    blogCardImageGlowDeg
+    blogCardImageGlowOpacity
+    blogCardImageHeight
     button1 {
       multiBox {
         content
