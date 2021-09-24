@@ -17,23 +17,21 @@ export default function HTML(props) {
                 <script type="text/javascript"
                     dangerouslySetInnerHTML={{
                         __html: `
-                            setTimeout(function(){
-                                (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.defer=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-  ym(64917802, "init", {
-      defer: true,
-      clickmap:true,
-      trackLinks:true,
-      accurateTrackBounce:true,
-      webvisor:true,
-      trackHash:true
-  });
-                        }, 5000)
-
-                        </script><noscript><div><img src="https://mc.yandex.ru/watch/64917802" style="position: absolute; left: -9999px;" alt /></div></noscript>
-                        <!-- /Yandex.Metrika counter -->
+                        setTimeout(function(){
+                            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                    
+                       ym(64917802, "init", {
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true,
+                            webvisor:true,
+                            ecommerce:"dataLayer"
+                       });
+                       }, 5000);
+                    </script>
+                    <noscript><div><img src="https://mc.yandex.ru/watch/64917802" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
             `
                     }}
                 />
