@@ -13,10 +13,7 @@ export default function HTML(props) {
                     content="width=device-width, initial-scale=1, shrink-to-fit=no"
                 />
                 {props.headComponents}
-            </head>
-            <body {...props.bodyAttributes}>
-                {props.preBodyComponents}
-  
+                <!-- /Yandex.Metrika counter -->
                 <script type="text/javascript"
                     dangerouslySetInnerHTML={{
                         __html: `
@@ -40,6 +37,10 @@ export default function HTML(props) {
             `
                     }}
                 />
+            </head>
+            <body {...props.bodyAttributes}>
+                {props.preBodyComponents}
+
                 <div
                     key={`body`}
                     id="___gatsby"
