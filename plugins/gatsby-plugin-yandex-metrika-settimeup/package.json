@@ -1,0 +1,57 @@
+{
+  "_from": "gatsby-plugin-yandex-metrika-settimeup@^2.5.0",
+  "_id": "gatsby-plugin-yandex-metrika-settimeup@2.5.0",
+  "_inBundle": false,
+  "_integrity": "sha512-2dJr9qpAwrKJTNGtr5FJDMIkQd3Kd5l4iNOMGZodvfe5uv7lgy9WH7uoFDeeFSvsg7cg+SKAKETPN1hEUry+zg==",
+  "_location": "/gatsby-plugin-yandex-metrika-settimeup",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "gatsby-plugin-yandex-metrika-settimeup@^2.5.0",
+    "name": "gatsby-plugin-yandex-metrika-settimeup",
+    "escapedName": "gatsby-plugin-yandex-metrika-settimeup",
+    "rawSpec": "^2.5.0",
+    "saveSpec": null,
+    "fetchSpec": "^2.5.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gatsby-plugin-yandex-metrika-settimeup/-/gatsby-plugin-yandex-metrika-settimeup-2.5.0.tgz",
+  "_shasum": "e915bbdf0c392111c8927a8f426021adedf42a6e",
+  "_spec": "gatsby-plugin-yandex-metrika-settimeup@^2.5.0",
+  "_where": "P:\\Users\\Felikso\\Strony internetowe\\VentusWEB\\production-repos\\ventus-trade-auta-main",
+  "author": {
+    "name": "Valerii Iatsko",
+    "email": "viatsko@viatsko.me"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Gatsby plugin to add yandex metrika onto a site",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.1.4",
+    "react": "^15.6.1"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "yandex metrika"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "gatsby-plugin-yandex-metrika-settimeup",
+  "peerDependencies": {
+    "gatsby": "^1.0.0 || >2.0.0-alpha"
+  },
+  "scripts": {
+    "build": "babel src --out-dir . --ignore __tests__",
+    "prepublish": "cross-env NODE_ENV=production npm run build",
+    "watch": "babel -w src --out-dir . --ignore __tests__"
+  },
+  "version": "2.5.0"
+}
