@@ -139,7 +139,7 @@ module.exports = {
 			}
 		},
 		`gatsby-plugin-preact`,
-/* 		{
+		{
 			resolve: `gatsby-plugin-yandex-metrika-timeup`,
 			resolve: require.resolve(`./plugins/gatsby-plugin-yandex-metrika-timeup`),
 			options: {
@@ -156,7 +156,7 @@ module.exports = {
 				// Async enables earlier loading of the metrika but it can negatively affect page loading speed. The default value is `false`.
 				defer: true,
 			},
-		}, */
+		},
 /* 		{
 			resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
 			options: {
