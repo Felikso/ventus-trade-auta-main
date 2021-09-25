@@ -140,8 +140,8 @@ module.exports = {
 		},
 		`gatsby-plugin-preact`,
 		{
-			resolve: `gatsby-plugin-yandex-metrika-timeup`,
-			/* resolve: require.resolve(`./plugins/gatsby-plugin-yandex-metrika-timeup`), */
+			/* resolve: `gatsby-plugin-yandex-metrika-timeup`, */
+			resolve: require.resolve(`./plugins/gatsby-plugin-yandex-metrika-timeup`),
 			options: {
 				// The ID of yandex metrika.
 				trackingId: process.env.YANDEX_METRICA_TRACKING_ID,
