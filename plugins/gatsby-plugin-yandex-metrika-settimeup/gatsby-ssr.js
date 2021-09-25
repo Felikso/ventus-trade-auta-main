@@ -28,7 +28,7 @@ exports.onRenderBody = function (_ref, pluginOptions) {
   return setComponents([_react2.default.createElement("script", {
     key: "gatsby-plugin-yandex-metrika-settimeup",
     dangerouslySetInnerHTML: {
-      __html: "\n  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0]," + (pluginOptions.defer ? "k.defer=1" : "k.async=1") + ",k.src=r,a.parentNode.insertBefore(k,a)})\n  (window, document, \"script\", \"" + metrikaSrc + "\", \"ym\");\n\n  ym(" + pluginOptions.trackingId + ", \"init\", {\n      defer: true,\n      clickmap:true,\n      trackLinks:true,\n      accurateTrackBounce:true,\n      webvisor:" + pluginOptions.webvisor + ",\n      trackHash:" + pluginOptions.trackHash + "\n  });\n" } }), _react2.default.createElement(
+      __html: "\n  setTimeout(function(){\n(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0]," + (pluginOptions.defer ? "k.defer=1" : "k.async=1") + ",k.src=r,a.parentNode.insertBefore(k,a)})\n  (window, document, \"script\", \"" + metrikaSrc + "\", \"ym\");\n\n  ym(" + pluginOptions.trackingId + ", \"init\", {\n      defer: true,\n      clickmap:true,\n      trackLinks:true,\n      accurateTrackBounce:true,\n      webvisor:" + pluginOptions.webvisor + ",\n      trackHash:" + pluginOptions.trackHash + "\n  });\n }, 5000)" } }), _react2.default.createElement(
     "noscript",
     null,
     _react2.default.createElement(
