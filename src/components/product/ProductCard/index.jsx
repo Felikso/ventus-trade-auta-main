@@ -16,13 +16,13 @@ export const ProductCard = ({ bgImage, product, i, sellIcon, icons, iconsArray }
     const even = i % 2 == 0
     const cardImage = getImage(bgImage)
 
-    const icon = product.sold.checkboxOptions[0].value ? sellIcon?.localFile.childSvg : null
+    const icon = product.sold.checkboxOptions[0].checked ? sellIcon?.localFile.childSvg : null
 
-    const img = product.sold.checkboxOptions[0].value ? sellIcon?.localFile.childImageSharp : null
+    const img = product.sold.checkboxOptions[0].checked ? sellIcon?.localFile.childImageSharp : null
 
     const contentArray = [
         product.price + " pln", 
-        product.invoice.checkboxOptions[0].value ? "tak" : "nie", 
+        product.invoice.checkboxOptions[0].checked ? "tak" : "nie", 
         product.oil, 
         product.courseValue, 
     ]
