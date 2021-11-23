@@ -47,26 +47,31 @@ query($slug: String!) {
     invoice {
 						  checkboxOptions  {
 	value
+	checked
  }
     }
     properties {
 						  checkboxOptions  {
 	value
+	checked
  }
     }
     imported {
 						  checkboxOptions  {
 	value
+	checked
  }
     }
     invoice {
 					checkboxOptions {
 					  value
+					  checked
 					}
 				  }
     loanable {
 					checkboxOptions {
 					  value
+					  checked
 					}
 				  }
     images: gallery {
@@ -459,7 +464,7 @@ const ProductPage = ({ data, key }) => {
 
       const contentArray = [
         price + " pln", 
-        invoice.checkboxOptions[0].value ? "tak" : "nie", 
+        invoice.checkboxOptions[0].checked? "tak" : "nie", 
         oil, 
         course + "" + courseValue,
         power + " km",
@@ -572,8 +577,8 @@ const ProductPage = ({ data, key }) => {
 
             </GridContentBox>
             <GridContentBox secondary>
-              {imported.checkboxOptions.value && (<p><span>Importowany</span></p>)}
-              {loanable.checkboxOptions.value && (<p><span>Możliwość wynajmu</span></p>)}
+              {imported.checkboxOptions.checked&& (<p><span>Importowany</span></p>)}
+              {loanable.checkboxOptions.checked&& (<p><span>Możliwość wynajmu</span></p>)}
             </GridContentBox>
 
 
@@ -581,8 +586,8 @@ const ProductPage = ({ data, key }) => {
             <GridContentBox >
               <SectionTitle fifth><h4>Wyposażenie</h4></SectionTitle>
               {properties.checkboxOptions.map((item, i) => (
-                item.value && 
-                (<li i={i}>✓ {item.value}</li>)
+                item.checked&& 
+                (<li i={i}>✓ {item.checked}</li>)
               ))}
 
             </GridContentBox>
