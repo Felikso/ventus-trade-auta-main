@@ -367,12 +367,12 @@ const Home = () => {
 				productName
 				price
 				invoice {
-					checkboxValueOptions {
+					checkboxOptions {
 					  value
 					}
 				  }
 				sold {
-					checkboxValueOptions {
+					checkboxOptions {
 					  value
 					}
 				  }
