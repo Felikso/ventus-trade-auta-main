@@ -159,7 +159,7 @@ fragment VentusautamenuPreviewContent on WpVentusautamenu {
     quantity
     menuCategory
     properties {
-						  checkboxValueOptions  {
+						  checkboxOptions  {
 	value
  }
     }
