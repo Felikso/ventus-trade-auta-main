@@ -369,11 +369,13 @@ const Home = () => {
 				invoice {
 					checkboxOptions {
 					  value
+					  checked
 					}
 				  }
 				sold {
 					checkboxOptions {
 					  value
+					  checked
 					}
 				  }
 				oil
