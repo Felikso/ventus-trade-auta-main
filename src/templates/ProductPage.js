@@ -587,7 +587,7 @@ const ProductPage = ({ data, key }) => {
               <SectionTitle fifth><h4>Wyposażenie</h4></SectionTitle>
               {properties.checkboxOptions.map((item, i) => (
                 item.checked&& 
-                (<li i={i}>✓ {item.checked}</li>)
+                (<li i={i}>✓ {item.value}</li>)
               ))}
 
             </GridContentBox>
